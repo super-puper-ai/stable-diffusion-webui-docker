@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y git && apt-get clean
 
 ENV ROOT=/stable-diffusion
 RUN --mount=type=cache,target=/root/.cache/pip \
-  git clone https://github.com/comfyanonymous/ComfyUI.git ${ROOT} && \
+  git clone https://github.com/super-puper-ai/ComfyUI.git ${ROOT} && \
   cd ${ROOT} && \
   git checkout master && \
   git reset --hard 884ea653c8d6fe19b3724f45a04a0d74cd881f2f && \
