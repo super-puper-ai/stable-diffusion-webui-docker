@@ -44,10 +44,10 @@ COPY . /docker/
 
 ENV NVIDIA_VISIBLE_DEVICES=all
 ENV PYTHONUNBUFFERED=1 PRELOAD=false HF_HOME=/root/.cache/huggingface CONFIG_DIR=/data/config/invoke CLI_ARGS=""
-EXPOSE 7860
+EXPOSE 7863
 
 ENTRYPOINT ["/docker/entrypoint.sh"]
-CMD invokeai --web --host 0.0.0.0 --port 7860 --root_dir ${ROOT} --config ${CONFIG_DIR}/models.yaml \
+CMD invokeai --web --host 0.0.0.0 --port 7863 --root_dir ${ROOT} --config ${CONFIG_DIR}/models.yaml \
   --outdir /output/invoke --embedding_directory /data/embeddings/ --lora_directory /data/models/Lora \
   --no-nsfw_checker --no-safety_checker ${CLI_ARGS}
 
