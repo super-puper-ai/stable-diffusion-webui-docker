@@ -14,7 +14,6 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   git clone https://github.com/super-puper-ai/ComfyUI.git ${ROOT} && \
   cd ${ROOT} && \
   git checkout master && \
-  git reset --hard 884ea653c8d6fe19b3724f45a04a0d74cd881f2f && \
   pip install -r requirements.txt
 
 
@@ -25,11 +24,10 @@ RUN --mount=type=cache,target=/root/.cache/pip  \
 
 WORKDIR ${ROOT}
 
-ARG BRANCH=master SHA=7e941f9f247f9b013a33c2e7d117466108414e99
+ARG BRANCH=master
 RUN --mount=type=cache,target=/root/.cache/pip \
   git fetch && \
   git checkout ${BRANCH} && \
-  git reset --hard ${SHA} && \
   pip install -r requirements.txt
 
 # add info
