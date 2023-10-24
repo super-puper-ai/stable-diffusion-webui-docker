@@ -14,7 +14,9 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   git clone https://github.com/super-puper-ai/ComfyUI.git ${ROOT} && \
   cd ${ROOT} && \
   git checkout master && \
-  pip install -r requirements.txt
+  pip install -r requirements.txt && \
+  git submodule init && \
+  git submodule update
 
 
 RUN --mount=type=cache,target=/root/.cache/pip  \
